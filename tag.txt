@@ -1,0 +1,50 @@
+1)Create a repository and push to github.
+
+git init
+vim file.txt
+git add file.txt
+git commit -m "added"
+git remote add origin https://github.com/ayush9810/testing.git
+$ git push -u origin master
+
+2)Create two files in master branch, then create a tag 1.0.0 for first release from master.
+
+$ vim file1.txt
+$ git add file1.txt
+$ git commit -m "added new file"
+$ vim file2.txt
+$ git add file2.txt
+$ git commit -m "added file"
+$ git tag -a v1.0.0 -m "created new file"
+
+3)Now, perform some changes in previous files and create another tag 1.0.1.
+
+) $ vim file1.txt
+$ git add file1.txt
+$ git commit -m "edited file"
+$ git tag -a v1.0.1 -m "updated file"
+$ git push origin –tag
+
+4)Now, create another file file3 and create a tag 1.1.0.
+$ vim file3.txt
+$ git add file3.txt
+$ git commit -m "added file3"
+$ git tag -a v1.1.0 -m "created file3"
+$ git push origin v1.1.0
+
+
+5)Now in 1.0.1 release, do some changes in existing files and create another tag 1.0.2.
+$ git checkout tags/v1.0.1
+$ vim file1.txt
+$ git add file1.txt
+$ git commit -m "edited file1"
+$ git tag -a v1.0.2 -m "updated file1"
+$ git push origin v1.0.2
+
+
+6)Also do some changes in release 1.1.0, create a tag for next release 1.1.1.
+$ git checkout tags/v1.1.0
+$ vim file3.txt
+$ git add file3.txt
+$ git commit -m "updated file3"
+$ git tag -a v1.1.1 -m "updated file3"
